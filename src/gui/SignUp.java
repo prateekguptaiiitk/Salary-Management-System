@@ -35,6 +35,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import database.DAO_3;
+
 public class SignUp extends JFrame{
 		public SignUp(){
 			SwingUtilities.invokeLater(new Runnable() {
@@ -46,7 +48,7 @@ public class SignUp extends JFrame{
 
 	                JLabel image, userLabel, passwordLabel;
 	                JLabel confirmPasswordLabel;
-	                JButton loginButton, resetButton;
+	                JButton signupbutton, resetButton;
 					JLabel signup;
 	                JCheckBox showPassword;
 
@@ -182,15 +184,15 @@ public class SignUp extends JFrame{
 	                cons.gridy = 7;
 	                cons.ipadx = 10;
 	                cons.insets = new Insets(0,0,0,250);
-	                loginButton = new JButton("Confirm");
-	                loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-	                loginButton.setForeground(new Color(0, 0, 0));
-	                loginButton.setBackground(new Color(240, 248, 255));
-	                loginButton.setFont(new Font("Serif", Font.BOLD, 18 ));
-	                gbag.setConstraints(loginButton, cons);
-	                panel.add(loginButton);
+	                signupbutton = new JButton("Confirm");
+	                signupbutton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+	                signupbutton.setForeground(new Color(0, 0, 0));
+	                signupbutton.setBackground(new Color(240, 248, 255));
+	                signupbutton.setFont(new Font("Serif", Font.BOLD, 18 ));
+	                gbag.setConstraints(signupbutton, cons);
+	                panel.add(signupbutton);
 
-	                loginButton.addActionListener(new ActionListener() {
+	                signupbutton.addActionListener(new ActionListener() {
 	                    public void actionPerformed(ActionEvent e) {
 	                        String confPwdText;
 	                        String pwdText;
@@ -201,10 +203,12 @@ public class SignUp extends JFrame{
 	                        if (confPwdText.equalsIgnoreCase(pwdText)){
 	                            JOptionPane.showMessageDialog(panel, "Successfully Signed Up!\nA confirmation mail with login credentials have been sent to your registered  email address");
 	                            home h = new home();
+	                            String username = userTextField.getText();
+		                        String password = passwordField.getText();
+		                        DAO_3.setCredentials(username, password);
 	                        } else {
 	                            JOptionPane.showMessageDialog(panel, "Passwords do not match!");
 	                        }
-	                        
 	                     // email ID of Recipient.
 	                        String recipient = "receiver@gmail.com";
 	                   
@@ -251,7 +255,6 @@ public class SignUp extends JFrame{
 	                        {
 	                           mex.printStackTrace();
 	                        }
-	                        
 	                    }
 	                });
 
@@ -269,6 +272,8 @@ public class SignUp extends JFrame{
 	                    public void actionPerformed(ActionEvent e) {
 	                        userTextField.setText("");
 	                        passwordField.setText("");
+	                        confirmPasswordField.setText("");
+	                        emailTextField.setText("");
 	                    }
 	                });
 
