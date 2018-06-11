@@ -40,30 +40,14 @@ public class home extends JFrame{
         cons.weighty = 0.7;
         cons.ipadx = 5;
         cons.ipady = 5;
-        cons.gridy = 2;
+        cons.gridy = 3;
         cons.gridx = 0;
 
         JLabel l1,l2;
 
-        JButton b1 = new JButton("Generate Current Salary");
         JButton b2 = new JButton("View Yearly Record");
         JButton b3 = new JButton("Update Employee Record");
 
-        b1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        b1.setForeground(new Color(0, 0, 0));
-        b1.setBackground(new Color(240, 248, 255));
-        b1.setFont(new Font("Serif", Font.BOLD, 20));
-        gbag.setConstraints(b1, cons);
-        panel.add(b1);
-
-        b1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                DAO dao = new DAO();
-                dao.getEmployee();
-            }
-        });
-
-        cons.gridx = 1;
         b2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         b2.setForeground(new Color(0, 0, 0));
         b2.setBackground(new Color(240, 248, 255));
@@ -78,7 +62,7 @@ public class home extends JFrame{
             }
         });
 
-        cons.gridx = 2;
+        cons.gridx = 1;
         b3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         b3.setForeground(new Color(0, 0, 0));
         b3.setBackground(new Color(240, 248, 255));
@@ -86,6 +70,11 @@ public class home extends JFrame{
         gbag.setConstraints(b3, cons);
         panel.add(b3);
 
+        b3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               UpdateEmpRecord uer = new UpdateEmpRecord();
+            }
+        });
 
         cons.gridx = 0;
         cons.gridwidth = 3;
@@ -105,7 +94,14 @@ public class home extends JFrame{
         gbag.setConstraints(label, cons);
         panel.add(label);
 
-        cons.gridy=3;
+        cons.gridy = 2;
+        l2=new JLabel("Welcome Admin!");
+        l2.setForeground(new Color(255, 255, 255));
+        l2.setFont(new Font("Tw Cen MT", Font.BOLD | Font.ITALIC, 35));
+        gbag.setConstraints(l2,cons);
+        panel.add(l2);
+        
+        cons.gridy = 4;
         l2=new JLabel("Salary Management System");
         l2.setForeground(new Color(255, 255, 255));
         l2.setFont(new Font("Tw Cen MT", Font.BOLD | Font.ITALIC, 35));
