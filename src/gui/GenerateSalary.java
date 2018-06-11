@@ -12,7 +12,7 @@ public class GenerateSalary extends JFrame {
     //public static JSpinner months;
 
     public GenerateSalary() {
-        super("Generate Current Salary");
+        super("Generate Current Employee Salary");
         ImageIcon img = new ImageIcon("img/logo.png");
         Image newImage = img.getImage().getScaledInstance(25,25,Image.SCALE_SMOOTH);
         setIconImage(newImage);
@@ -46,7 +46,7 @@ public class GenerateSalary extends JFrame {
         };
         
         cons.gridy = 1;
-        l = new JLabel("Generate Salary");
+        l = new JLabel("Generate Current Employee Salary");
         l.setForeground(new Color(255, 255, 255));
         l.setFont(new Font("Tw Cen MT", Font.BOLD, 30));
         gbag.setConstraints(l, cons);
