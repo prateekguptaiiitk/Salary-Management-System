@@ -153,6 +153,7 @@ public class AdmLogin extends JFrame{
                         if (userText.equalsIgnoreCase("master") && pwdText.equalsIgnoreCase("main")) {
                             JOptionPane.showMessageDialog(panel, "Login Successful");
                             home h = new home();
+            					dispose();
                         } else {
                             JOptionPane.showMessageDialog(panel, "Invalid Username or Password");
                         }
