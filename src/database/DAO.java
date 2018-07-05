@@ -16,7 +16,7 @@ public class DAO {
         Connection conn = DBConnection.getConnection();
         try {
 
-            String insert = "select * from projectDatabase.projectDatabase";
+            String insert = "select * from projectDatabase.SalaryRecord";
 
             PreparedStatement ps = conn.prepareStatement(insert);
 
@@ -141,7 +141,7 @@ public class DAO {
                                     Connection con1 = DBConnection.getConnection();
                                     try {
 
-                                        String insert = "INSERT INTO projectDatabase.projectDatabase VALUES(?,?,?,?,?,?,NULL)";
+                                        String insert = "INSERT INTO projectDatabase.SalaryRecord VALUES(?,?,?,?,?,?,?,NULL)";
 
                                         PreparedStatement ps1 = con1.prepareStatement(insert);
 
@@ -151,6 +151,7 @@ public class DAO {
                                         ps1.setFloat(4, d);
                                         ps1.setString(5, (String)gs.cb4.getSelectedItem());
                                         ps1.setInt(6, Integer.parseInt((String) gs.cb3.getSelectedItem()));
+                                        ps1.setFloat(7, sal);
 
                                         ps1.executeUpdate();
 

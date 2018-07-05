@@ -25,7 +25,7 @@ public class DAO_2 {
 		Connection conn1 = DBConnection.getConnection();
 		try {
 
-			String insert = "select * from projectDatabase.projectDatabase";
+			String insert = "select * from projectDatabase.SalaryRecord";
 
 			PreparedStatement ps = conn.prepareStatement(insert);
 			PreparedStatement ps1 = conn1.prepareStatement(insert);
