@@ -93,7 +93,9 @@ public class RemoveEmp extends JFrame {
 
         confirm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            			Confirmation conf = new Confirmation();
+            			String username = userTextField.getText();
+            			Confirmation conf = new Confirmation(username);
+            		    dispose();
             		}
             });
 

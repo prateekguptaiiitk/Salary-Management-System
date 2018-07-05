@@ -76,6 +76,7 @@ public class Index extends JFrame{
         b1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AdmLogin log = new AdmLogin();
+				frame.dispose();
             }
         });
 
@@ -90,6 +91,7 @@ public class Index extends JFrame{
         b2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 EmpLogin empLog = new EmpLogin();
+                frame.dispose();
             }
         });
 

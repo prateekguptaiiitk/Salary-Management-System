@@ -120,6 +120,7 @@ public class ViewYearlyRecord extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     table.print();
+                    dispose();
                 } catch (PrinterException pe) {
                     System.err.println("Error printing: " + pe.getMessage());
                 }

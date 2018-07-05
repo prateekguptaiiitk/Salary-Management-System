@@ -18,6 +18,10 @@ import javax.swing.JTextField;
 
 public class SalaryDetails extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static JLabel l1, basicsal, hra, da, total,sym1, sym2;
 	public static JTextField t1, t2, t3, t4;
     public static JButton btn2, btn3;

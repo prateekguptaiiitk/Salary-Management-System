@@ -73,6 +73,7 @@ public class UpdateEmpRecord extends JFrame{
 	        b1.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                AddEmp addemp = new AddEmp();
+	                dispose();
 	            }
 	        });
 	        
@@ -87,6 +88,7 @@ public class UpdateEmpRecord extends JFrame{
 	        b2.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
 	                RemoveEmp rememp = new RemoveEmp();
+	                dispose();
 	            }
 	        });
 
@@ -100,8 +102,8 @@ public class UpdateEmpRecord extends JFrame{
 
 	        b3.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	                DAO dao = new DAO();
-	                dao.getEmployee();
+	                DAO.getEmployee();
+	                dispose();
 	            }
 	        });
 
