@@ -207,50 +207,6 @@ public class AddEmp extends JFrame {
 									"Successfully Signed Up!\nA confirmation mail with login credentials have been sent to your registered  email address");
 							UpdateEmpRecord uer = new UpdateEmpRecord();
 							DAO_3.setCredentials(username, pwdText);
-//							// email ID of Recipient.
-//							String recipient = "receiver@gmail.com";
-//
-//							// email ID of Sender.
-//							String sender = "sender@gmail.com";
-//
-//							// Getting system properties
-//							Properties properties = System.getProperties();
-//
-//							// Setting up mail server
-//							properties.put("mail.smtp.auth", "true");
-//							properties.put("mail.smtp.starttls.enable", "true");
-//							properties.put("mail.smtp.host", "smtp.gmail.com");
-//							properties.put("mail.smtp.port", "587");
-//
-//							// creating session object to get properties
-//							Session session = Session.getDefaultInstance(properties, new Authenticator() {
-//								protected PasswordAuthentication getPasswordAuthentication() {
-//									return new PasswordAuthentication("username", "password");
-//								}
-//							});
-//
-//							try {
-//								// MimeMessage object.
-//								Message message = new MimeMessage(session);
-//
-//								// Set From Field: adding senders email to from field.
-//								message.setFrom(new InternetAddress(sender));
-//
-//								// Set To Field: adding recipient's email to from field.
-//								message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
-//
-//								// Set Subject: subject of the email
-//								message.setSubject("IIIT Kalyani Signup Confirmation");
-//
-//								// set body of the email.
-//								message.setText("You have been successfully signed up to IIIT Kalyani Salary Management System.\n Your login credentials are as follows:-\n Username:"+username+"Password:"+pwdText);
-//
-//								// Send email.
-////								Transport.send(message);
-//								dispose();
-//							} catch (MessagingException mex) {
-//								mex.printStackTrace();
-//							}
 						} else {
 							JOptionPane.showMessageDialog(panel, "Passwords do not match!");
 						}
